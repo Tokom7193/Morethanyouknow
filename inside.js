@@ -30,7 +30,7 @@ const center = document.querySelector(".center");
 
 let objects = [];
 
-const size = 150;
+const size = Math.min(170, window.innerWidth * 0.28);
 const speed = .25;
 
 
