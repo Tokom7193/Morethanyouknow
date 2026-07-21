@@ -55,41 +55,37 @@ bubbles.forEach((bubble,index)=>{
     let safe=false;
 
 
-    while(!safe){
+    let attempts = 0;
 
-        x=random(
-            20,
-            window.innerWidth-size-20
-        );
+while (!safe && attempts < 100) {
 
-        y=random(
-            20,
-            window.innerHeight-size-20
-        );
+    attempts++;
 
+    x = random(
+        20,
+        window.innerWidth - size - 20
+    );
 
-        safe=true;
+    y = random(
+        20,
+        window.innerHeight - size - 20
+    );
 
+    safe = true;
 
-        for(let o of objects){
+    for (let o of objects) {
 
-            let dx=x-o.x;
-            let dy=y-o.y;
+        let dx = x - o.x;
+        let dy = y - o.y;
 
-            let d=Math.sqrt(
-                dx*dx+dy*dy
-            );
+        let d = Math.sqrt(dx * dx + dy * dy);
 
-
-            if(d < size+40){
-
-                safe=false;
-
-            }
-
+        if (d < size + 40) {
+            safe = false;
+            break;
         }
-
     }
+}
 
 
 
